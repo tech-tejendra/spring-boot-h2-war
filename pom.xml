@@ -11,6 +11,7 @@
 	<groupId>com.tech-tejendra</groupId>
 	<artifactId>spring-boot-h2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>spring-boot-h2</name>
 	<description>spring-boot-h2</description>
 	<properties>
@@ -51,6 +52,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <configuration>
+				<attachClasses>true</attachClasses>
+				<webXml>target/web.xml</webXml>
+				<webResources>
+				    <resource>
+					<directory>src/main/webapp</directory>
+					<filtering>true</filtering>
+				    </resource>
+				</webResources>
+			    </configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
